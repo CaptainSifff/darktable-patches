@@ -1,0 +1,13 @@
+--- /tmp/gen-profile	2014-04-22 18:59:56.000000000 +0200
++++ /Denoising/noise/gen-profile	2014-12-15 02:37:34.793627190 +0100
+@@ -417,6 +417,10 @@
+ 	done
+ done
+ 
++cp $presets ${presets}full
++bash $scriptdir/average.sh $presets
++mv ${presets}new $presets
++
+ # Insert presets in the copied database.
+ echo
+ echo "===> Record presets in library for testing purpose"
