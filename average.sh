@@ -16,7 +16,7 @@ ab=$(echo $ab | awk -v n=$nr '{printf "%.14g",$0/n;}')
 br=$(echo $br | awk -v n=$nr '{printf "%.14g",$0/n;}')
 bg=$(echo $bg | awk -v n=$nr '{printf "%.14g",$0/n;}')
 bb=$(echo $bb | awk -v n=$nr '{printf "%.14g",$0/n;}')
-echo "0, {$ar,$ag,$ab},{$br,$bg,$bb}}," >> $newfile
+echo "0, {$ar,$ag,$ab}, {$br,$bg,$bb}}," >> $newfile
 echo -n $beg >> $newfile
 fi
 oldiso=$curiso
@@ -39,7 +39,6 @@ br=$(echo $res | cut -d"," -f 1 | awk -v a=$br '{printf "%.14g",a+$0;}')
 bg=$(echo $res | cut -d"," -f 2 | awk -v a=$bg '{printf "%.14g",a+$0;}')
 x=$(echo $res | cut -d"," -f 3)
 bb=$(echo ${x:1:${#x}-3} | awk -v a=$bb '{printf "%.14g",a+$0;}')
-#echo $ar,$ag,$ab $br,$bg,$bb
 nr=$(($nr+1))
 fi
 idx=$(($idx+1))
@@ -50,5 +49,5 @@ ab=$(echo $ab | awk -v n=$nr '{printf "%.14g",$0/n;}')
 br=$(echo $br | awk -v n=$nr '{printf "%.14g",$0/n;}')
 bg=$(echo $bg | awk -v n=$nr '{printf "%.14g",$0/n;}')
 bb=$(echo $bb | awk -v n=$nr '{printf "%.14g",$0/n;}')
-echo "0, {$ar,$ag,$ab},{$br,$bg,$bb}}," >> $newfile
+echo "0, {$ar,$ag,$ab}, {$br,$bg,$bb}}," >> $newfile
 echo "" >> $newfile
